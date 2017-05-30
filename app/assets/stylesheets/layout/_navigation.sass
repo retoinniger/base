@@ -1,0 +1,96 @@
+@font-face
+  font-family: 'IM Fell English SC'
+  font-style: normal
+  font-weight: 400
+  src: local('IM Fell English SC'), local('IM_Fell_English_SC'), asset-url('assets/im_fell_english_sc.woff2') format('woff2')
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+.navbar-inverse
+  .navbar-brand
+    font-family: 'IM Fell English SC', serif
+    font-size: 32px
+
+    &.active,
+    &.active:hover
+      background-color: $navbar-inverse-link-active-bg
+      color: $navbar-inverse-link-active-color
+
+.navbar
+  .caret
+    margin-left: 5px
+
+  .glyphicon
+    margin-right: 0
+
+  .menu-icon
+    +float-right
+
+  .menu-text
+    +float-left
+    color: #fff
+    padding-right: 10px
+    line-height: 14px
+
+#jump_links
+  margin: 0 /* Otherwise, Bootstrap adds a -15px margin */
+
+  a
+    +transform(translate(-50%, 0))
+    +box-shadow(#000 0 0 20px)
+    position: fixed
+    z-index: 1040
+    left: 50%
+    top: 0
+    background-color: $navbar-inverse-link-active-bg
+
+    // In collapsed mode, the links are too narrow otherwise
+    padding:
+      top: 15px
+      bottom: 15px
+
+#meta_navigation
+  img.avatar
+    +border-radius(5px)
+    margin: -15px 0
+    height: 34px
+
+  #dropdown_new_user
+    .user_password
+      margin-left: 0.5em
+
+    .remember_me_and_submit
+      margin-top: 0.5em
+      text-align: right
+
+      .btn
+        margin-left: 0.5em
+
+    .user_remember_me
+      +float-left
+      margin-top: 6px
+
+      .boolean
+        margin-right: 0.25em
+
+    .visit_full_sign_in_page
+      text-align: center
+
+      hr
+        clear: both
+        margin-bottom: 5px
+
+#breadcrumbs
+  margin-top: 71px // Accommodate the navbar
+
+  h3
+    +float-left
+    margin: 0 8px 0 0
+    font-size: $font-size-base
+    line-height: $line-height-base
+
+  .breadcrumb
+    margin-bottom: 0
+    padding: 0
+
+    a
+      margin-right: 4px

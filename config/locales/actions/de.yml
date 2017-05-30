@@ -1,0 +1,21 @@
+---
+de:
+  actions:
+    actions: Aktionen
+    destroy: Löschen
+    destroy_resource: "%{resource} löschen"
+    destroy_resource_confirmation_question: "%{resource} #%{id} wirklich löschen?"
+    edit: Bearbeiten
+    edit_resource: "%{resource} bearbeiten"
+    edit_resource_with_id: "%{resource} #%{id} bearbeiten"
+    filter: Filtern
+    new: Erstellen
+    new_resource: "%{resource} erstellen"
+    remove_filter: Filter entfernen
+    resources_list: "%{resources}-Liste"
+    results: Resultate
+    show: Anzeigen
+    show_resource: "%{resource} anzeigen"
+    show_resource_with_id: "%{resource} #%{id}"
+    toggle: Ansicht umschalten
+    toggle_dropdown: Menü umschalten

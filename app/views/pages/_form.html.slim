@@ -1,0 +1,37 @@
+= simple_form_for page, html:    {class: 'form-horizontal'},
+                        wrapper: :horizontal_form do |f|
+
+  == render 'shared/form/stale_info', f: f
+
+  = accordion :info, item_options: {title_tag: 'h2', panel_class: 'panel-info'} do |accordion|
+    = accordion.panel do |panel|
+      = panel.title do
+        = t '.info'
+
+      = panel.body do
+        == render 'page_hierarchy_info'
+        == render 'referencing_pages_info'
+        == render 'pasting_images_info'
+
+  = panel do |panel|
+    = panel.heading do
+      = t('shared.form.details')
+
+    = panel.body do
+      = f.association :parent, collection: @parent_collection, label_method: :title_with_details
+
+      - if f.object.new_record?
+        = f.input :position, collection: [], disabled: true
+      - else
+        = f.input :position, collection: @position_collection, include_blank: false, input_html: {data: {'depends-id': 'page_parent_id', 'depends-value': f.object.parent_id || ''}}
+
+      = f.input :title
+      = f.input :navigation_title
+      = f.input :lead, as: :text_fullscreen
+      = f.input :content, as: :text_fullscreen_with_pastable_images
+      = f.input :notes, as: :text_fullscreen_with_pastable_images
+
+  .row
+    .col-md-12
+      == render 'images/images', f: f
+      == render 'shared/form/actions', form: f, resource: @page

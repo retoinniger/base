@@ -1,0 +1,24 @@
+/ i18n-tasks-use t('.title')
+= headline_with_flash
+
+.row
+  .col-sm-4.col-sm-push-8
+    = render 'devise/shared/links'
+
+  .col-sm-8.col-sm-pull-4
+    = simple_form_for resource, as:      resource_name,
+                                url:     registration_path(resource_name),
+                                html:    {class: 'form-horizontal'},
+                                wrapper: :horizontal_form do |f|
+
+      == render 'users/detail_inputs', f: f
+
+      = panel do |panel|
+        = panel.heading do
+          = t('.choose_password')
+
+        = panel.body do
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
+
+      = f.button :submit, headline, class: 'btn-success'

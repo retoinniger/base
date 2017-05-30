@@ -1,0 +1,11 @@
+th.count
+  = recurring_string?(count, "version-#{version.id}-count")
+
+td.whodunnit
+  = recurring_string?(versions_whodunnit(version.whodunnit), "version-#{version.id}-whodunnit")
+
+td.event
+  = recurring_string?(t(".#{version.event}"), "version-#{version.id}-event")
+
+td.created_at
+  = recurring_string?(l(version.created_at, format: :short), "version-#{version.id}-created_at")

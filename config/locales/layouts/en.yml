@@ -1,0 +1,28 @@
+---
+en:
+  layouts:
+    application:
+      footer: Footer
+      header: Header
+    jump_links:
+      content: Jump to content
+      home_page: Jump to home page
+    navigation:
+      admin: Admin
+      choose_language: Choose language
+      content_navigation: Content navigation
+      current_group: current menu group
+      current_item: current menu item
+      edit_account: Edit account
+      go_to_home_page: "(go to home page)"
+      home: Base
+      log_out: Log out
+      meta_navigation: Meta navigation
+      navigation: Navigation
+      overview: Overview
+      show_account: Show account
+      sign_in: Sign in
+      sign_up: Sign up
+      toggle_navigation: Menu
+      user_menu: User menu
+      you_are_here: You are here

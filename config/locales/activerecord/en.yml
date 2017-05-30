@@ -1,0 +1,63 @@
+---
+en:
+  activerecord:
+    attributes:
+      image:
+        created_at: Created at
+        created_by: Created by
+        file: Datei
+        identifier: Identifier
+        updated_at: Updated at
+      page:
+        children: Sub pages
+        content: Content
+        created_at: Created at
+        created_by: Created by
+        images: Images
+        navigation_title: Navigation title
+        notes: Notes
+        title: Title
+        updated_at: Updated at
+        updated_by: Updated by
+      paper_trail/version:
+        created_at: Created at
+        whodunnit: Whodunnit
+      role:
+        created_at: Created at
+        name: Name
+        resource_type: Resource
+        updated_at: Updated at
+      user:
+        about: About
+        avatar: Profile picture
+        confirmed_at: Confirmed at
+        created_at: Created at
+        current_password: Current password
+        current_sign_in_at: Signed in since
+        current_sign_in_ip: Current IP
+        curriculum_vitae: Curriculum vitae
+        email: Email
+        failed_attempts: Failed attempts
+        last_sign_in_at: Last sign in at
+        last_sign_in_ip: Last IP
+        locked_at: Locked at
+        login: Login
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me
+        roles: Roles
+        updated_at: Updated at
+    models:
+      image:
+        one: Image
+        other: Images
+      page:
+        one: Page
+        other: Pages
+      paper_trail/version:
+        one: Version
+        other: Versions
+      user:
+        one: User
+        other: Users

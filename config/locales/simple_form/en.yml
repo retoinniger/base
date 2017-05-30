@@ -1,0 +1,36 @@
+---
+en:
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    hints:
+      page:
+        content: The main content of the page. Displayed below the lead and above the teasers of the page's sub pages.
+        lead: Describe the page's content in a few short sentences. Displayed on top of the page and in teasers.
+        navigation_title: Appears in the menu and breadcrumbs. Leave empty to use title.
+        notes: Only for internal usage (aren't publicly viewable)
+        title: Appears as main heading when displaying the page
+      user:
+        about: Write something about you (biography, interests, hobbies...). You can use Pandoc Markdown to add basic formatting.
+        password_confirmation: Retype your password to avoid typing errors
+    inputs:
+      paste:
+        click_to_paste_another_image: Click to paste another %{attribute} image
+        image_preview: Image preview
+        paste_here: Paste here
+      text_fullscreen:
+        toggler_text: Toggle fullscreen (Esc)
+      text_fullscreen_with_pastable_images:
+        alt_prompt: Enter alternative text (leave empty for decorative image)
+        identifier_prompt: Enter file name (leave empty to use random number only)
+      upload:
+        click_to_choose_a_file: Click to choose a file for %{attribute}
+        click_to_choose_another_file: Click to choose another %{attribute} file
+        file_preview: File preview
+        remove_file: Remove existing %{attribute} file
+        reset_selection: Reset %{attribute} file selection
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'

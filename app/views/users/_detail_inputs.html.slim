@@ -1,0 +1,10 @@
+= panel do |panel|
+  = panel.heading do
+    = t('.account_information')
+
+  = panel.body do
+    = f.input :name
+    = f.input :email, as: :email, required: true
+    = f.input :avatar, as: :paste
+    = f.input :about, as: :text_fullscreen
+    = f.input :curriculum_vitae, as: :upload

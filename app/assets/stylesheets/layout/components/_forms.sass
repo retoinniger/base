@@ -1,0 +1,53 @@
+// Use fieldset and legends for panels.
+// See http://stackoverflow.com/questions/29259089/design-issues-when-combining-panel-with-fieldset-and-panel-heading-with-legend?noredirect=1#comment46720773_29259089
+legend.panel-heading
+  +float-left
+  font-size: $font-size-base
+  margin-bottom: 15px
+
+legend.control-label
+  font-size: $font-size-base
+  border-bottom: 0
+
+  label
+    margin-bottom: 0
+
+label.required
+  white-space: nowrap
+
+  // Instead of the default asterisk "*", we show a superscripted icon
+  .fa
+    font-size: $font-size-base / 2
+    vertical-align: super
+    padding: 4px 4px 8px 0
+
+select.datetime
+  display: inline-block
+  width: auto
+
+.simple_form
+  .panel-body
+    padding-bottom: 0 // The .form-groups already add some spacing at the bottom
+
+.btn:focus,
+  outline: 0
+  border-color: $input-border-focus
+
+// Make horizontal checkboxes don't have too much vertical padding
+.form-horizontal
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline
+    min-height: auto
+    padding-top: 0
+
+.btn:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus
+  +box-shadow($input-border-focus 0 0 10px)
+
+.textarea-fullscreenizer
+  .textarea-fullscreenizer-toggler
+    @extend .label

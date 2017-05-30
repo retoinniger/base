@@ -1,0 +1,82 @@
+nav#navigation.container
+  .navbar.yamm.navbar-inverse.navbar-fixed-top
+    h2#navigation_title.sr-only = t '.navigation'
+
+    .container
+      .navbar-header
+        // Place brand before the "Toggle navigation" button to have an intuitive focus order (on the Bootstrap examples page it's after the button which seems unintuitive)
+        = link_to root_path, class: home_link_class, id: 'logo' do
+          = t('.home')
+          span.sr-only =< t('.go_to_home_page')
+
+        button#toggle_navigation.navbar-toggle.collapsed aria-controls="bs-navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+          span.menu-text = t '.toggle_navigation'
+          span.menu-icon
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+      #navbar.navbar-collapse.collapse aria-expanded="false"
+        h3.sr-only = t '.content_navigation'
+
+        ul#content_navigation.nav.navbar-nav
+          - @root_pages.each do |page|
+            - if (children = page.children).any?
+              = navigation_group page.navigation_title_or_title, page_path(page) do
+                - page.children.each do |child|
+                  = navigation_item child.navigation_title_or_title, page_path(child)
+            - else
+              = navigation_item page.navigation_title_or_title, page_path(page)
+
+        h3.sr-only = t '.meta_navigation'
+
+        ul#meta_navigation.nav.navbar-nav.navbar-right
+          == render 'layouts/resource_navigation_group', resource_class: Page if can? :crud, Page
+          == render 'layouts/resource_navigation_group', resource_class: User if can? :crud, User
+
+          - if user_signed_in?
+            = navigation_group user_avatar(t('.user_menu')), user_registration_path, "#{icon :user, type: :fa} #{t '.show_account'}" do
+              = navigation_item edit_user_registration_path do
+                = icon :edit, type: :fa
+                =< t '.edit_account'
+
+              li
+                = link_to destroy_user_session_path, method: :delete do
+                  = icon('sign-out', type: :fa)
+                  =< t('.log_out')
+
+              - if can? :access, :rails_admin
+                li.divider role="presentation"
+
+                li = link_to rails_admin_path(locale: :en) do
+                  = icon(:gears, type: :fa)
+                  =< t('.admin')
+
+          - else
+            = navigation_item new_user_registration_path do
+              span.visible-sm-inline-block = icon 'user-plus', type: :fa
+              span.hidden-sm = t '.sign_up'
+
+            = navigation_mega t('.sign_in'), new_user_session_path do
+              .row = render 'devise/sessions/form', resource: User.new, display: :small
+
+          li#language_chooser.dropdown
+            = link_to flag(current_locale_flag, t('.choose_language')), '#', class: 'dropdown-toggle', 'data-toggle': 'dropdown', 'aria-expanded': false
+
+            ul.dropdown-menu
+              li lang="en"
+                = link_to locale: 'en' do
+                  => flag(:gb)
+                  | Show page in english
+
+              li lang="de"
+                = link_to locale: 'de' do
+                  => flag(:de)
+                  | Seite auf Deutsch anzeigen
+
+  #breadcrumbs.breadcrumb
+    h3 #{t '.you_are_here'}:
+
+    ol.breadcrumb
+      li = link_to t('app.acronym'), root_path
+      = render_breadcrumbs

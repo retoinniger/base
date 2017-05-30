@@ -1,0 +1,20 @@
+= f.hidden_field :lock_version
+
+- if f.object.stale_info.any?
+  .stale_info
+    = panel :warning do |panel|
+      = panel.heading do
+        = t '.stale_attributes'
+
+      = panel.body do
+        table.table.table-striped.table-hover.diff
+          thead
+            tr
+              == render 'shared/diff/head'
+
+          tbody
+            - f.object.stale_info.each do |stale_info|
+              tr id="stale_attribute_#{stale_info.input_id}" data-diff="true"
+                == render 'shared/diff/data', attribute: stale_info.human_attribute_name, before: stale_info.value_before, after: stale_info.value_after
+
+        p = t '.instructions'

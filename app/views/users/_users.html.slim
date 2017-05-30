@@ -1,0 +1,32 @@
+= accordion :filter, item_options: {title_tag: 'h2', panel_class: 'panel-warning'} do |accordion|
+  = accordion.panel do |panel|
+    = panel.title do
+      => icon :filter, type: :fa
+      = t 'actions.filter'
+
+    = panel.body do
+      - if params[:q]
+        = link_to request.path
+          => icon :close, type: :fa
+          = t 'actions.remove_filter'
+
+      = search_form_for q, html:    {class: 'form-horizontal'},
+                           wrapper: :horizontal_form do |f|
+
+        / TODO: Fields aren't translated automatically, see https://github.com/activerecord-hackery/ransack/issues/631
+        / TODO: Why is this required by default?
+        = f.input :name_cont, required: false, label: "#{User.human_attribute_name :name} #{t('ransack.predicates.cont')}"
+        = f.button :submit, t('actions.filter'), class: 'btn-warning'
+
+h2.sr-only = t 'actions.results'
+
+table.users.table.table-striped.table-hover
+  thead
+    tr
+      th.name  = User.human_attribute_name :name
+      th.email = User.human_attribute_name :email
+      th.roles = User.human_attribute_name :roles
+      th colspan="3" = t 'actions.actions'
+
+  tbody
+    = render users

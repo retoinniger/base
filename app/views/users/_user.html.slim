@@ -1,0 +1,8 @@
+tr id=dom_id(user)
+  th.name  = link_to user.name, user
+  td.email = user.email
+  td.roles
+    = recurring_string?(user.roles.map(&:name).join(', '), :roles)
+
+  td.actions
+    == render 'shared/index/actions', resource: user

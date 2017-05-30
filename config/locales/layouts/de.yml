@@ -1,0 +1,28 @@
+---
+de:
+  layouts:
+    application:
+      footer: Fussbereich
+      header: Kopfbereich
+    jump_links:
+      content: Zum Inhalt springen
+      home_page: Zur Startseite springen
+    navigation:
+      admin: Admin
+      choose_language: Sprache wählen
+      content_navigation: Inhaltsnavigation
+      current_group: aktuelle Menügruppe
+      current_item: aktueller Menüpunkt
+      edit_account: Konto bearbeiten
+      go_to_home_page: "(zur Startseite)"
+      home: Base
+      log_out: Abmelden
+      meta_navigation: Metanavigation
+      navigation: Navigation
+      overview: Übersicht
+      show_account: Konto anzeigen
+      sign_in: Anmelden
+      sign_up: Registrieren
+      toggle_navigation: Menü
+      user_menu: Benutzer Menü
+      you_are_here: Sie befinden sich hier

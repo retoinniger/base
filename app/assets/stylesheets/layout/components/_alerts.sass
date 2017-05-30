@@ -1,0 +1,18 @@
+// The close button has to come after the information in the flow.
+.alert
+  position: relative
+
+  h2, h3
+    font-style: normal
+    font-size: $font-size-base
+    margin-top: 10px
+
+  h2
+    &:first-child,
+    &.sr-only + h3
+      margin-top: 0
+
+  .close
+    position: absolute
+    top: $alert-padding
+    right: $alert-padding

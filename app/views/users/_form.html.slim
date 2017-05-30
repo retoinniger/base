@@ -1,0 +1,16 @@
+= simple_form_for user, html:    {class: 'form-horizontal'},
+                        wrapper: :horizontal_form do |f|
+
+  == render 'shared/form/stale_info', f: f
+  == render 'detail_inputs', f: f
+
+  - if user.new_record?
+    = panel do |panel|
+      = panel.heading do
+        = t('.password')
+
+      = panel.body do
+        = f.input :password, autocomplete: 'off', required: true
+        = f.input :password_confirmation, required: true
+
+  == render 'shared/form/actions', form: f, resource: @user

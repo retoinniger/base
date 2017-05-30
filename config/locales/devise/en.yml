@@ -1,0 +1,57 @@
+---
+en:
+  devise:
+    confirmations:
+      new:
+        title: Resend confirmation instructions
+    failure:
+      invalid: Invalid login or password.
+      not_found_in_database: Invalid login or password.
+    mailer:
+      confirmation_instructions:
+        confirm_my_account: Confirm my account!
+      reset_password_instructions:
+        change_my_password: Change my password!
+      unlock_instructions:
+        unlock_my_account: Unlock my account!
+    passwords:
+      edit:
+        title: Edit password
+      new:
+        send_me_reset_password_instructions: Send me reset password instructions
+        title: Forgot your password?
+    registrations:
+      edit:
+        account_information: Account information
+        are_you_sure: Are you sure?
+        cancel_my_account: Cancel my account
+        current_password: Current password (we need this to confirm your changes)
+        currently_awaiting_confirmation_for: Currently awaiting confirmation for
+        headline_with_flash: Edit your account
+        new_password: New password (leave blank if you don't want to change it)
+        title: Edit account
+        unhappy: Unhappy?
+      new:
+        account_information: Account information
+        choose_password: Choose a password
+        title: Sign up
+      show:
+        title: Welcome, %{user}!
+    sessions:
+      form:
+        having_a_problem: Having a problem?
+        sign_in: Sign in
+        username_or_email: Username or email
+        visit_full_sign_in_page: Visit the full sign in page!
+      new:
+        title: Sign in
+    shared:
+      links:
+        didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
+        didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+        forgot_your_password: Forgot your password?
+        frequently_occuring_sign_in_problems: Frequently occurring sign in problems
+        title: Additional links
+    unlocks:
+      new:
+        title: Resend unlock instructions

@@ -1,0 +1,21 @@
+dl.dl-horizontal
+  dt = User.human_attribute_name :email
+  dd.email = user.email
+  dt = User.human_attribute_name :created_at
+  dd.created_at = l user.created_at
+  dt = User.human_attribute_name :updated_at
+  dd.updated_at = l user.updated_at
+
+  - if user.avatar?
+    dt = User.human_attribute_name :avatar
+    dd.avatar = zoomable_image user.avatar, alt: user.name
+
+  - if user.curriculum_vitae?
+    dt = User.human_attribute_name :curriculum_vitae
+    dd.curriculum_vitae = link_to user.curriculum_vitae.file.identifier, user.curriculum_vitae.url
+
+- if user.about?
+  .about
+    h2 = User.human_attribute_name :about
+
+    = markdown indent_heading_level user.about, 2
