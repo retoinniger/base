@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1
+  - 2.2.2
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rspec spec
@@ -11,6 +11,6 @@ addons:
 notifications:
   email:
     recipients:
-      - joshua.muheim@access-for-all.ch
+      - innigerreto@gmail.com
     on_failure: change
     on_success: change
