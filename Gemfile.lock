@@ -58,6 +58,8 @@ GEM
     awesome_print (1.7.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
+    bcrypt-ruby (3.1.5-x86-mingw32)
+      bcrypt (>= 3.1.3)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -201,12 +203,13 @@ GEM
     guard-shell (0.7.1)
       guard (>= 2.0.0)
       guard-compat (~> 1.0)
-    haml (4.0.7)
+    haml (5.0.1)
+      temple (>= 0.8.0)
       tilt
     highline (1.7.8)
     htmlentities (4.3.4)
     http_parser.rb (0.6.0)
-    i18n (0.8.1)
+    i18n (0.8.4)
     i18n-tasks (0.9.15)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
@@ -228,9 +231,18 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.6)
-    kaminari (0.17.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    kaminari (1.0.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.0.8)
@@ -321,14 +333,14 @@ GEM
     rails-i18n (5.0.4)
       i18n (~> 0.7)
       railties (~> 5.0)
-    rails_admin (1.1.1)
+    rails_admin (1.2.0)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
       font-awesome-rails (>= 3.0, < 5)
-      haml (~> 4.0)
+      haml (>= 4.0, < 6)
       jquery-rails (>= 3.0, < 5)
       jquery-ui-rails (~> 5.0)
-      kaminari (~> 0.14)
+      kaminari (>= 0.14, < 2.0)
       nested_form (~> 0.3)
       rack-pjax (>= 0.7)
       rails (>= 4.0, < 6)
@@ -491,6 +503,7 @@ DEPENDENCIES
   acts_as_list
   acts_as_tree
   awesome_print
+  bcrypt-ruby (~> 3.1.2)
   better_errors
   bootstrap-sass
   cancancan

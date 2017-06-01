@@ -7,7 +7,7 @@ script:
 bundler_args: --without development
 addons:
   code_climate:
-    repo_token: 243e5ab59244b7a1d3fb97d56bfe9961307ad558cb4a7cbeec3c85104e9ee11b
+    repo_token: 3c301208fc2fb3e0d2774e5cb90a4d42f65bb84b7a2443cca582bf7bea6f13b4a30ee50209bea31ef50f083d09fd65f96422e2cc5b14a61bec4a3a28c983382b
 notifications:
   email:
     recipients:
